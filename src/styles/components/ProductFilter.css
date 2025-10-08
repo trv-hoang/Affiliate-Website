@@ -1,0 +1,130 @@
+/* Product Filter Component */
+.product-filter {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 184, 220, 0.3);
+}
+
+.filter-header {
+  margin-bottom: var(--space-md);
+}
+
+.filter-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+  text-align: center;
+}
+
+.filter-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 184, 220, 0.3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.filter-pill:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.filter-pill.active {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.filter-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.filter-name {
+  font-weight: inherit;
+}
+
+.filter-count {
+  font-size: var(--font-size-xs);
+  opacity: 0.8;
+  font-weight: var(--font-weight-normal);
+}
+
+.filter-pill.active .filter-count {
+  opacity: 0.9;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .product-filter {
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+  }
+  
+  .filter-categories {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: var(--space-xs);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-light) transparent;
+  }
+  
+  .filter-categories::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .filter-categories::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .filter-categories::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius: var(--radius-full);
+  }
+  
+  .filter-pill {
+    flex-shrink: 0;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Animation for filter changes */
+@keyframes filterChange {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.products-grid {
+  animation: filterChange 0.3s ease-out;
+}
