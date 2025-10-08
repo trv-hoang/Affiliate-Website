@@ -59,9 +59,9 @@ function ProductFilter({ activeCategory, onCategoryChange, products }) {
               className={`filter-pill ${isActive ? 'active' : ''}`}
               onClick={() => onCategoryChange(category.id)}
             >
-              <span className="filter-icon">{category.icon}</span>
-              <span className="filter-name">{category.name}</span>
-              <span className="filter-count">({count})</span>
+                            <div className="filter-icon">{category.icon}</div>
+              <div className="filter-name">{category.name}</div>
+              <div className="filter-count">({count})</div>
             </button>
           );
         })}
