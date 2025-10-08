@@ -1,0 +1,22 @@
+/* =====================================================
+   Main CSS Entry Point
+   Import all stylesheets in correct order
+   ===================================================== */
+
+/* 1. Global styles and design tokens */
+@import './globals.css';
+
+/* 2. Base component patterns */
+@import './base.css';
+
+/* 3. Page-specific styles */
+@import './pages/HomePage.css';
+@import './pages/AdminDashboard.css';
+
+/* 4. Component-specific styles */
+@import './components/Avatar.css';
+@import './components/ProductCard.css';
+@import './components/ShareButton.css';
+@import './components/SocialLinks.css';
+@import './components/LazyImage.css';
+@import './components/AdminLogin.css';

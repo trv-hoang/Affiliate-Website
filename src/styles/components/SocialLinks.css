@@ -1,0 +1,80 @@
+.social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: var(--spacing-md) 0;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  color: var(--pink-600);
+  cursor: pointer;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-fast);
+}
+
+.social-link:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.social-link:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Platform specific colors on hover */
+.social-link-youtube:hover {
+  background: #FF0000;
+  color: white;
+}
+
+.social-link-facebook:hover {
+  background: #1877F2;
+  color: white;
+}
+
+.social-link-tiktok:hover {
+  background: #000000;
+  color: white;
+}
+
+.social-link-instagram:hover {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  color: white;
+}
+
+.social-link-twitter:hover {
+  background: #1DA1F2;
+  color: white;
+}
+
+.social-link-shopee:hover {
+  background: #EE4D2D;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,219 @@
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--pink-50) 0%,
+    white 30%,
+    white 100%
+  );
+  padding-bottom: var(--spacing-xl);
+}
+
+.profile-header {
+  text-align: center;
+  padding: var(--spacing-xl) 0 calc(var(--spacing-xl) * 1.5) 0;
+  animation: fadeIn 0.6s ease;
+  position: relative;
+}
+
+/* Decorative elements */
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 182, 193, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.profile-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-name {
+  margin-top: var(--spacing-md);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pink-600) 0%, var(--pink-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeIn 0.8s ease 0.2s both;
+  letter-spacing: -0.02em;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+  animation: fadeIn 0.8s ease 0.3s both;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.products-section {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+}
+
+.products-section::before {
+  content: 'SẢN PHẨM YÊU THÍCH';
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--pink-500);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.8;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.empty-state {
+  text-align: center;
+  padding: calc(var(--spacing-xl) * 2) var(--spacing-xl);
+  color: var(--text-secondary);
+  animation: fadeIn 0.6s ease;
+}
+
+.empty-state::before {
+  content: '🎀';
+  display: block;
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--pink-400);
+  font-weight: 500;
+}
+
+.page-footer {
+  text-align: center;
+  margin-top: calc(var(--spacing-xl) * 2);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: linear-gradient(to top, var(--pink-50) 0%, transparent 100%);
+  border-top: 1px solid rgba(255, 136, 176, 0.15);
+}
+
+.page-footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.8;
+}
+
+.admin-link {
+  display: inline-block;
+  color: var(--pink-500);
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  background: rgba(255, 136, 176, 0.1);
+  font-weight: 500;
+}
+
+.admin-link:hover {
+  background: var(--pink-500);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 136, 176, 0.3);
+}
+
+.error-message {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 400px;
+}
+
+.error-message h2 {
+  color: var(--pink-600);
+  margin-bottom: var(--spacing-sm);
+}
+
+.error-detail {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-sm);
+  font-family: monospace;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .products-grid {
+    gap: var(--spacing-xl);
+  }
+  
+  .profile-header {
+    padding: calc(var(--spacing-xl) * 1.5) 0 calc(var(--spacing-xl) * 2) 0;
+  }
+  
+  .profile-name {
+    font-size: 3rem;
+  }
+  
+  .profile-title {
+    font-size: 1.3rem;
+  }
+  
+  .profile-header::before {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding-bottom: var(--spacing-lg);
+  }
+  
+  .profile-header {
+    padding: var(--spacing-lg) 0 calc(var(--spacing-lg) * 1.5) 0;
+  }
+  
+  .profile-header::before {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-title {
+    font-size: 1.1rem;
+  }
+  
+  .products-section {
+    margin-top: var(--spacing-md);
+  }
+  
+  .products-section::before {
+    font-size: 0.75rem;
+    margin-bottom: var(--spacing-md);
+  }
+}
